@@ -1,0 +1,12 @@
+<h1>Лабораторная работа 11</h1>
+<%= form_with url: lab_show_path, method: :get do |form|%>
+<%= form.label('Число:')%>
+<%= form.number_field(:numb)%> <br> <br>
+<%= form.submit('Проверить', id: 'check_button')%>
+<% end%>
+<br>
+<%= flash[:notice]%>
+
+<%= form_with url: lab_check_xml_path, data: { turbo: false }, method: :get do |form| %>
+<%= form.submit('Открыть БД', id: 'bd_button')%>
+<%end%>
